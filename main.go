@@ -14,6 +14,9 @@
 
 // osv-scanner checks projects and dependencies for known vulnerabilities
 // using the OSV (Open Source Vulnerabilities) database.
+//
+// Personal fork: customized for local development and learning purposes.
+// Upstream: https://github.com/google/osv-scanner
 package main
 
 import (
