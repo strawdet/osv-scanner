@@ -18,6 +18,7 @@ require (
 )
 
 require (
+	// dagger.io/dagger is used for CI pipeline integration; not needed for local builds
 	dagger.io/dagger v0.9.7 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
