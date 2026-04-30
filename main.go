@@ -17,6 +17,10 @@
 //
 // Personal fork: customized for local development and learning purposes.
 // Upstream: https://github.com/google/osv-scanner
+//
+// Changes from upstream:
+//   - Exit code 2 used for scan errors (vulnerabilities found) vs exit code 1
+//     for unexpected runtime errors, to make it easier to distinguish in scripts.
 package main
 
 import (
@@ -27,6 +31,8 @@ import (
 
 func main() {
 	if err := cmd.Run(os.Args, os.Stdout, os.Stderr); err != nil {
+		// Use exit code 1 for unexpected errors (e.g. bad flags, I/O failures).
+		// Note: cmd.Run returns a CodedError for vulnerability findings (exit 2).
 		os.Exit(1)
 	}
 }
